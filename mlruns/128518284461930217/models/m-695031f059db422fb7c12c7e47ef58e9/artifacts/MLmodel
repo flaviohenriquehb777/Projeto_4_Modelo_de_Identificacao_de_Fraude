@@ -1,0 +1,52 @@
+artifact_path: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/models/m-695031f059db422fb7c12c7e47ef58e9/artifacts
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.12.3
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: xgb
+    xgb_version: 2.1.4
+is_signature_from_type_hint: false
+mlflow_version: 3.3.2
+model_id: m-695031f059db422fb7c12c7e47ef58e9
+model_size_bytes: 429530
+model_uuid: m-695031f059db422fb7c12c7e47ef58e9
+prompts: null
+run_id: d73959e1a7b74da9a62125acefc118ce
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "float", "name": "Time", "required": true}, {"type": "float",
+    "name": "V1", "required": true}, {"type": "float", "name": "V2", "required": true},
+    {"type": "float", "name": "V3", "required": true}, {"type": "float", "name": "V4",
+    "required": true}, {"type": "float", "name": "V5", "required": true}, {"type":
+    "float", "name": "V6", "required": true}, {"type": "float", "name": "V7", "required":
+    true}, {"type": "float", "name": "V8", "required": true}, {"type": "float", "name":
+    "V9", "required": true}, {"type": "float", "name": "V10", "required": true}, {"type":
+    "float", "name": "V11", "required": true}, {"type": "float", "name": "V12", "required":
+    true}, {"type": "float", "name": "V13", "required": true}, {"type": "float", "name":
+    "V14", "required": true}, {"type": "float", "name": "V15", "required": true},
+    {"type": "float", "name": "V16", "required": true}, {"type": "float", "name":
+    "V17", "required": true}, {"type": "float", "name": "V18", "required": true},
+    {"type": "float", "name": "V19", "required": true}, {"type": "float", "name":
+    "V20", "required": true}, {"type": "float", "name": "V21", "required": true},
+    {"type": "float", "name": "V22", "required": true}, {"type": "float", "name":
+    "V23", "required": true}, {"type": "float", "name": "V24", "required": true},
+    {"type": "float", "name": "V25", "required": true}, {"type": "float", "name":
+    "V26", "required": true}, {"type": "float", "name": "V27", "required": true},
+    {"type": "float", "name": "V28", "required": true}, {"type": "double", "name":
+    "Amount", "required": true}]'
+  outputs: '[{"type": "integer", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-09-02 11:15:23.915829'

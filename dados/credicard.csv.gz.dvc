@@ -1,0 +1,5 @@
+outs:
+- md5: c843c908899eec97bc0b050581591135
+  size: 68792721
+  hash: md5
+  path: credicard.csv.gz

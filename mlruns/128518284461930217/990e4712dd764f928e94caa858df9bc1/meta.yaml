@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/990e4712dd764f928e94caa858df9bc1/artifacts
+end_time: 1756809092656
+entry_point_name: ''
+experiment_id: '128518284461930217'
+lifecycle_stage: active
+run_id: 990e4712dd764f928e94caa858df9bc1
+run_name: victorious-auk-719
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756809091368
+status: 4
+tags: []
+user_id: FHB_DS
