@@ -1,2 +1,0 @@
-Commit 4: docs: Documentar processo de treinamento de modelos ML
-Data: 2024-04-04 18:45:00
