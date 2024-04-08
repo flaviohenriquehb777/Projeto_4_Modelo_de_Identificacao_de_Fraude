@@ -1,0 +1,2 @@
+Commit 8: chore: Limpar código legado do sistema antigo
+Data: 2024-04-09 17:10:00
