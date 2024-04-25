@@ -1,2 +1,0 @@
-Commit 20: fix: Resolver problema de sincronização em alertas
-Data: 2024-04-27 11:50:00
