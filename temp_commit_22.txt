@@ -1,2 +1,0 @@
-Commit 22: test: Adicionar testes de integração para pipeline completo
-Data: 2024-04-28 11:50:00
