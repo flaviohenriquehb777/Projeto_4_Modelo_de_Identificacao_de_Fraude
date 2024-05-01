@@ -1,2 +1,0 @@
-Commit 24: security: Adicionar camadas de validação anti-fraude robustas
-Data: 2024-04-29 12:29:00
