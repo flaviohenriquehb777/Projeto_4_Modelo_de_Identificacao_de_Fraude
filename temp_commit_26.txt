@@ -1,2 +1,0 @@
-Commit 26: security: Adicionar autenticação multifator para operações críticas
-Data: 2024-04-30 10:05:00
