@@ -1,0 +1,2 @@
+Commit 34: fix: Resolver problema de classificação incorreta de usuários
+Data: 2024-05-09 14:45:00
