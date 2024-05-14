@@ -1,2 +1,0 @@
-Commit 42: refactor: Refatorar interface de configuração de regras
-Data: 2024-05-16 14:27:00
