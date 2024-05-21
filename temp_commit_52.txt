@@ -1,2 +1,0 @@
-Commit 52: security: Implementar proteção contra ataques de engenharia social
-Data: 2024-05-27 12:26:00
