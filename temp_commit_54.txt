@@ -1,2 +1,0 @@
-Commit 54: security: Implementar criptografia para dados sensíveis de transações
-Data: 2024-05-28 14:23:00
