@@ -1,2 +1,0 @@
-Commit 60: docs: Documentar procedimentos de resposta a incidentes
-Data: 2024-06-05 10:15:00
