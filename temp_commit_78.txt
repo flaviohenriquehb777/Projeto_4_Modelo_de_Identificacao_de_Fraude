@@ -1,2 +1,0 @@
-Commit 78: fix: Resolver inconsistências no cálculo de score de risco
-Data: 2024-06-23 12:46:00
