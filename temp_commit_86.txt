@@ -1,2 +1,0 @@
-Commit 86: refactor: Refatorar sistema de regras de detecção para maior flexibilidade
-Data: 2024-06-26 14:32:00
