@@ -1,2 +1,0 @@
-Commit 92: docs: Atualizar documentação técnica do sistema anti-fraude
-Data: 2024-07-03 09:02:00
