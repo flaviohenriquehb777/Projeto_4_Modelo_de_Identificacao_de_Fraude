@@ -1,2 +1,0 @@
-Commit 102: chore: Limpar código legado do sistema antigo
-Data: 2024-07-14 10:50:00
