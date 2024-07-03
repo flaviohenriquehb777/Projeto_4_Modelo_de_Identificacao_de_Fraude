@@ -1,2 +1,0 @@
-Commit 104: chore: Organizar estrutura de arquivos do projeto
-Data: 2024-07-15 15:51:00
