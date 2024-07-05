@@ -1,2 +1,0 @@
-Commit 108: refactor: Refatorar código de validação de transações
-Data: 2024-07-20 15:11:00
