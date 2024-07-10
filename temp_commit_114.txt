@@ -1,2 +1,0 @@
-Commit 114: fix: Resolver inconsistências no cálculo de score de risco
-Data: 2024-07-23 18:14:00
