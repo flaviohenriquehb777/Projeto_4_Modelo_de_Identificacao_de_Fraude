@@ -1,2 +1,0 @@
-Commit 118: release: Lançar versão com suporte a novos tipos de fraude
-Data: 2024-07-26 13:18:00
