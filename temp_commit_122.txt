@@ -1,2 +1,0 @@
-Commit 122: refactor: Reestruturar sistema de alertas para melhor escalabilidade
-Data: 2024-07-31 18:18:00
