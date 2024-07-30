@@ -1,2 +1,0 @@
-Commit 134: fix: Corrigir falsos positivos em transações legítimas
-Data: 2024-08-16 18:06:00
