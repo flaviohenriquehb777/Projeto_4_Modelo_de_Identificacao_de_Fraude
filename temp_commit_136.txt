@@ -1,2 +1,0 @@
-Commit 136: release: Versão com novo algoritmo de análise comportamental
-Data: 2024-08-19 14:27:00
