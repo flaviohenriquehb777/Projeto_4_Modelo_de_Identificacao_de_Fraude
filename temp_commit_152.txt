@@ -1,2 +1,0 @@
-Commit 152: chore: Atualizar configurações de ambiente
-Data: 2024-09-07 12:40:00
