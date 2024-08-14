@@ -1,2 +1,0 @@
-Commit 154: fix: Corrigir vazamento de dados em pipeline de ML
-Data: 2024-09-08 11:23:00
