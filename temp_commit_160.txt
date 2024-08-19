@@ -1,2 +1,0 @@
-Commit 160: chore: Atualizar configurações de ambiente
-Data: 2024-09-11 13:03:00
