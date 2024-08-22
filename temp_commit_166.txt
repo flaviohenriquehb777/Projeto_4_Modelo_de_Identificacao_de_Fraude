@@ -1,2 +1,0 @@
-Commit 166: docs: Criar documentação de API para sistema de scoring
-Data: 2024-09-15 18:25:00
