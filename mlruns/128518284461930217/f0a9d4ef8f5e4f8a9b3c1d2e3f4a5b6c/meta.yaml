@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/f0a9d4ef8f5e4f8a9b3c1d2e3f4a5b6c/artifacts
+end_time: 1727467200000
+entry_point_name: ''
+experiment_id: '128518284461930217'
+lifecycle_stage: active
+run_id: f0a9d4ef8f5e4f8a9b3c1d2e3f4a5b6c
+run_name: Treinamento do Modelo - XGBoost Otimizado
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727463600000
+status: 3
+tags: []
+user_id: FHB_DS

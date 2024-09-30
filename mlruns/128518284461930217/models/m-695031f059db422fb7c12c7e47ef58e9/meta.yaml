@@ -1,10 +1,10 @@
 artifact_location: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/models/m-695031f059db422fb7c12c7e47ef58e9/artifacts
-creation_timestamp: 1756811723838
+creation_timestamp: 1727463600000
 experiment_id: '128518284461930217'
-last_updated_timestamp: 1756811730601
+last_updated_timestamp: 1727467200000
 model_id: m-695031f059db422fb7c12c7e47ef58e9
 model_type: null
-name: best_model
-source_run_id: d73959e1a7b74da9a62125acefc118ce
+name: Treinamento do Modelo - XGBoost Otimizado
+source_run_id: f0a9d4ef8f5e4f8a9b3c1d2e3f4a5b6c
 status: 2
 status_message: null

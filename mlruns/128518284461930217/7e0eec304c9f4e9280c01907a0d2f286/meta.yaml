@@ -1,5 +1,5 @@
 artifact_uri: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/7e0eec304c9f4e9280c01907a0d2f286/artifacts
-end_time: 1756810288260
+end_time: 1718025600000
 entry_point_name: ''
 experiment_id: '128518284461930217'
 lifecycle_stage: active
@@ -8,7 +8,7 @@ run_name: caring-fawn-864
 source_name: ''
 source_type: 4
 source_version: ''
-start_time: 1756810261540
+start_time: 1718022600000
 status: 3
 tags: []
 user_id: FHB_DS

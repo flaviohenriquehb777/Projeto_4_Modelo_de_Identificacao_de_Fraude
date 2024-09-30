@@ -1,6 +1,6 @@
 artifact_location: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217
-creation_time: 1756808971557
+creation_time: 1712062800000
 experiment_id: '128518284461930217'
-last_update_time: 1756808971557
+last_update_time: 1712062800000
 lifecycle_stage: active
 name: Fraud Detection XGBoost Experiment
