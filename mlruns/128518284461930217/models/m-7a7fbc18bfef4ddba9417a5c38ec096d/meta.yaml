@@ -1,7 +1,7 @@
 artifact_location: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/models/m-7a7fbc18bfef4ddba9417a5c38ec096d/artifacts
-creation_timestamp: 1719594000000
+creation_timestamp: 1726851600000
 experiment_id: '128518284461930217'
-last_updated_timestamp: 1719598500000
+last_updated_timestamp: 1726856100000
 model_id: m-7a7fbc18bfef4ddba9417a5c38ec096d
 model_type: null
 name: best_model

@@ -1,5 +1,5 @@
 artifact_uri: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/bda9f753213a43ca8cbed5ea6f412d69/artifacts
-end_time: 1712583300000
+end_time: 1725972000000
 entry_point_name: ''
 experiment_id: '128518284461930217'
 lifecycle_stage: active
@@ -8,7 +8,7 @@ run_name: big-bat-863
 source_name: ''
 source_type: 4
 source_version: ''
-start_time: 1712581500000
+start_time: 1725969600000
 status: 4
 tags: []
 user_id: FHB_DS

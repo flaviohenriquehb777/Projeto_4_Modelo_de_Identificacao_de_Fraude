@@ -1,5 +1,5 @@
 artifact_uri: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/e6e663f71e2d43a1aedca8c75b10449e/artifacts
-end_time: 1720801500000
+end_time: 1727197200000
 entry_point_name: ''
 experiment_id: '128518284461930217'
 lifecycle_stage: active
@@ -8,7 +8,7 @@ run_name: kindly-skunk-508
 source_name: ''
 source_type: 4
 source_version: ''
-start_time: 1720800000000
+start_time: 1727193600000
 status: 4
 tags: []
 user_id: FHB_DS
