@@ -4,7 +4,7 @@ entry_point_name: ''
 experiment_id: '128518284461930217'
 lifecycle_stage: active
 run_id: e6e663f71e2d43a1aedca8c75b10449e
-run_name: kindly-skunk-508
+run_name: Cross-validation
 source_name: ''
 source_type: 4
 source_version: ''
