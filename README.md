@@ -1,6 +1,7 @@
 # Projeto_4_Modelo_de_Identificacao_de_Fraude<br>
 ## Usando algoritmos de Machine Learning para criar um modelo de identificação de fraude. <br><br>
 Para esse modelo, foram utilizados, em princípio, cinco algoritmos de Marchine Learning para analisar os resultados.<br><br>
+NOTA: Para realizar o projeto, favor descompactar a base de dados.<br><br>
 ## Algoritmos utilizados no projeto: <br><br>
 - Logistic regression;<br> 
 - Decision Trees; <br> 
