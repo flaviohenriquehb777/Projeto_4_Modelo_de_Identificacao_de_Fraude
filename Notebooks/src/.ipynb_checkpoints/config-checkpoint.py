@@ -7,6 +7,7 @@ PASTA_DADOS = PASTA_PROJETO / "dados"
 
 # coloque abaixo o caminho para os arquivos de dados de seu projeto
 DADOS_MASTERCARD = PASTA_DADOS / "creditcard.csv"
+DADOS_MASTERCARD_TRATADO = PASTA_DADOS / "creditcard_tratado.parquet"
 
 # DADOS_DIABETES_TRATADOS = PASTA_DADOS / "diabetes.parquet"
 # DADOS_DIABETES_CATEGORIZADOS = PASTA_DADOS / "diabetes_categorizado.parquet"
@@ -17,3 +18,4 @@ DADOS_MASTERCARD = PASTA_DADOS / "creditcard.csv"
 # coloque abaixo outros caminhos que você julgar necessário
 # PASTA_RELATORIOS = PASTA_PROJETO / "relatorios"
 # PASTA_IMAGENS = PASTA_RELATORIOS / "imagens"
+
