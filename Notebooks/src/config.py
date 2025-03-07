@@ -6,7 +6,7 @@ PASTA_PROJETO = Path(__file__).resolve().parents[2]
 PASTA_DADOS = PASTA_PROJETO / "dados"
 
 # coloque abaixo o caminho para os arquivos de dados de seu projeto
-DADOS_MASTERCARD = PASTA_DADOS / "creditcard.csv"
+DADOS_MASTERCARD = PASTA_DADOS / "creditcard.csv.gz"
 DADOS_MASTERCARD_TRATADO = PASTA_DADOS / "creditcard_tratado.parquet"
 
 # DADOS_DIABETES_TRATADOS = PASTA_DADOS / "diabetes.parquet"
