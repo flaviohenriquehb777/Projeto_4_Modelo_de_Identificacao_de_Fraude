@@ -4,8 +4,6 @@
 
 Para esse modelo, foram utilizados, em princípio, quatro algoritmos de Marchine Learning para analisar os resultados.<br><br>
 
-**NOTA**: Para realizar o projeto, favor descompactar a base de dados.<br><br>
-
 ## Algoritmos utilizados no projeto: <br>
 
 - XGBoost
