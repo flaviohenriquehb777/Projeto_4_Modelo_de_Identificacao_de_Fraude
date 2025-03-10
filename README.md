@@ -27,8 +27,8 @@ Porém, no final do projeto, foi concluído que seria melhor, para obtermos o re
 - RandomOverSampler; <br> 
 - SMOTE. <br><br>
 
-Para escolher o melhor algoritmo de Machine Learning utilizei uma função de minha autoria chamada: testar_modelos_com_undersampling:<br>
-Esse função utiliza o RandomUnderSampler como pré-processamento e os seguintes algoritmos de Machine Learning:<br>
+Para escolher o melhor algoritmo de Machine Learning utilizei uma função de minha autoria chamada: testar_modelos_com_undersampling.<br>
+Essa função utiliza o RandomUnderSampler como pré-processamento e os seguintes algoritmos de Machine Learning:<br>
 
 - RandomForest;
 - DecisionTree;
