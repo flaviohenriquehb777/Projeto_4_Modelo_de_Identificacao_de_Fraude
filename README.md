@@ -1,4 +1,4 @@
-# Projeto_4_Modelo_de_Identificacao_de_Fraude<br>
+# Modelo de Identificacao de Fraude (Credicard - Brasil) <br>
 
 ### <br> Usando algoritmos de Machine Learning para criar um modelo de identificação de fraude. <br><br>
 
