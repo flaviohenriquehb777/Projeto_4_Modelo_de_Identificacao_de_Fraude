@@ -1,0 +1,19 @@
+# Arquivos temporários de notebooks
+.ipynb_checkpoints/
+
+# Códigos compilados do Python
+__pycache__/
+*.pyc
+
+# Modelos salvos
+*.pkl
+*.h5
+*.keras
+
+# Bases de dados (caso não queira versionar)
+*.csv
+*.csv.gz
+*.parquet
+
+# Arquivos do sistema
+.DS_Store
