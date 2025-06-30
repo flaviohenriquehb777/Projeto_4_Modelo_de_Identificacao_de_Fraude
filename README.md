@@ -1,66 +1,176 @@
-# Modelo de Identificacao de Fraude (Credicard - Brasil) <br>
+# Modelo de Identificação de Fraude (Credicard - Brasil)
 
-### <br> Usando algoritmos de Machine Learning para criar um modelo de identificação de fraude. <br><br>
+**Utilizando algoritmos de Machine Learning para criar um modelo robusto de identificação de transações fraudulentas.**
 
-Para esse modelo, foram utilizados, em princípio, quatro algoritmos de Marchine Learning para analisar os resultados.<br><br>
+## Sumário
+- [Descrição do Projeto](#descrição-do-projeto)
+- [Contexto dos Dados](#contexto-dos-dados)
+- [Algoritmos e Técnicas Utilizadas](#algoritmos-e-técnicas-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Processo de Desenvolvimento](#processo-de-desenvolvimento)
+- [Instalação e Uso](#instalação-e-uso)
+- [Resultados e Conclusão](#resultados-e-conclusão)
+- [Interpretação das Métricas](#interpretação-das-métricas)
+- [Licença](#licença)
+- [Contato](#contato)
 
-## Algoritmos utilizados no projeto: <br>
+## DESCRIÇÃO DO PROJETO:
 
-- XGBoost
-- Logistic Regression;<br> 
-- Random Forest; <br> 
-- Support Vector Classifier (SVC). <br><br>
+Este projeto tem como objetivo desenvolver um modelo de Machine Learning capaz de identificar transações financeiras fraudulentas, com foco em otimizar a balança entre a detecção de fraudes e a minimização de falsos positivos, crucial para a experiência do cliente em transações diárias de baixo valor. O modelo final foi ajustado para atender às necessidades de negócio, garantindo alta precisão para evitar bloqueios indevidos.
 
-O projeto contou com várias etapas. Estão todas expostas aqui no GitHub, passo a passo até o arquivo final.<br>
+## Contexto dos Dados:
 
-O projeto contou uma uma análise exploratória detalhada. Nesse momento, foi observada a necessidade de balancear o dataset. Pois o mesmo se encontrava desbalanceado, alterando demais os resultados.<br> 
-Porém, no final do projeto, foi concluído que seria melhor, para obtermos o resultado acordado com a empresa, que não utilizássemos o balanceamento. Isso poderá ser conferido ao longo do projeto.<br> 
+A base de dados utilizada contém transações financeiras e, devido a questões de confidencialidade, os recursos originais foram transformados utilizando o PCA (Principal Component Analysis). As principais colunas são:
+- `'Time'` (tempo): Segundos decorridos entre cada transação e a primeira transação no conjunto de dados.
+- `'Amount'` (valor): O valor da transação.
+- `'Class'` (classe): Variável de resposta, onde `1` indica fraude e `0` indica transação legítima.
+- `'V1, V2, ... V28'`: Principais componentes obtidos com PCA, representando características anonimizadas da transação.
 
-## Foram utilizadas algumas técnicas de balanceamento: <br>
+A natureza altamente desbalanceada do dataset (poucas fraudes em relação a transações legítimas) foi um desafio central abordado ao longo do desenvolvimento do projeto.
 
-### Under-sampling: <br> 
-- RandomUnderSampler; <br> 
-- ClusterCentroids; <br>
-- NearMiss; <br>
+## Algoritmos e Técnicas Utilizadas:
 
-### Over-sampling: <br>
-- RandomOverSampler; <br> 
-- SMOTE. <br><br>
+Para a construção e avaliação do modelo, foram explorados diversos algoritmos de Machine Learning e técnicas de balanceamento:
 
-Para escolher o melhor algoritmo de Machine Learning utilizei uma função de minha autoria chamada: testar_modelos_com_undersampling.<br>
-Essa função utiliza o RandomUnderSampler como pré-processamento e os seguintes algoritmos de Machine Learning:<br>
+### Algoritmos Principais:
+- **XGBoost**: Frequentemente um dos melhores em problemas de classificação.
+- **Logistic Regression**: Um modelo linear robusto e interpretável.
+- **Random Forest**: Algoritmo baseado em árvores de decisão, conhecido por sua robustez e bom desempenho.
+- **Support Vector Classifier (SVC)**: Efetivo em espaços de alta dimensão.
 
-- RandomForest;
-- DecisionTree;
-- LogisticRegression;
-- SVC;
-- KNN;
-- XGBoost;
-- ANN.<br><br>
+### Técnicas de Balanceamento (Exploradas):
+Para lidar com o desbalanceamento dos dados, foram testadas as seguintes técnicas:
 
-A função retorna os três melhores modelos, em ordem decrescente, com base na área sob a curva precisão-recall (PR AUC).<br>
-Por fim, também foram utilizados vários hiperparâmetros através do GridSearchCV para se chegar ao melhor resultado.<br><br>
+- **Under-sampling**:
+    - `RandomUnderSampler`
+    - `ClusterCentroids`
+    - `NearMiss`
+- **Over-sampling**:
+    - `RandomOverSampler`
+    - `SMOTE` (Synthetic Minority Over-sampling Technique)
 
-## CONCLUSÃO:<br>
+### Outras Técnicas:
+- **Normalização de Dados**: Utilizada para padronizar as características.
+- **Validação Cruzada (Cross-Validation)**: Empregado para avaliar a robustez do modelo, dividindo o dataset em múltiplas dobras.
+- **Otimização de Hiperparâmetros**: Utilização de `GridSearchCV` para encontrar a melhor combinação de parâmetros para os algoritmos.
+- **Curva Precision-Recall (PR AUC)**: Métrica crucial para avaliar o desempenho em datasets desbalanceados, focando na capacidade do modelo de identificar corretamente os positivos.
 
-<br>O modelo de detecção de fraudes foi avaliado utilizando validação cruzada com 10 dobras, resultando nas seguintes métricas médias:<br>
+## Estrutura do Projeto:
+Este repositório está organizado nos seguintes arquivos e diretórios:
 
-- ### Acurácia: 99,96% 
-- ### Precisão: 92,27% 
-- ### Recall: 81,02% <br><br>
+- `data/`: (Assumindo que seus dados estejam aqui ou sejam baixados/gerados) Contém a base de dados utilizada no projeto.
+- `notebooks/`: Contém os notebooks Jupyter que documentam todo o processo de desenvolvimento.
+    - `01_777_Initial_Model.ipynb`: Análise exploratória inicial e primeiros testes.
+    - `02_777_Alg_ML_unbalanced.ipynb`: Avaliação dos algoritmos com o dataset desbalanceado.
+    - `03_777_Alg_ML_USamp.ipynb`: Experimentação com técnicas de *Under-sampling*.
+    - `04_777_Alg_ML_OSamp.ipynb`: Experimentação com técnicas de *Over-sampling*.
+    - `05_777_Alg_ML_normalization.ipynb`: Análise do impacto da normalização nos dados.
+    - `06_777_Alg_ML_Cross_validation.ipynb`: Aplicação de validação cruzada para maior robustez.
+    - `07_777_Alg_ML_Parameters.ipynb`: Otimização de hiperparâmetros usando `GridSearchCV`.
+    - `00_777_Final_Model.ipynb`: O notebook final que consolida o melhor modelo e as conclusões.
+    - `Prediction_Fraud_Test_New_Data.ipynb`: Notebook para testar o modelo final com novos dados simulados.
+- `README.md`: Este arquivo.
+- `LICENSE.md`: Arquivo contendo a licença do projeto (MIT).
+- `requirements.txt`: Lista de dependências Python para o projeto.
 
-Dado que a empresa aplicará esse modelo para transações corriqueiras com um valor máximo de R$5.000,00, a principal preocupação é minimizar falsos positivos para evitar reclamações de clientes. <br><br>
+## Processo de Desenvolvimento:
 
-## INTERPRETAÇÃO DAS MÉTRICAS:<br>
+O projeto passou por várias etapas de experimentação e refino:
 
-- ### Alta Precisão (92,27%)<br>
-  
-Isso indica que a maioria das transações identificadas como fraude realmente são fraudes, o que significa que poucos clientes legítimos terão suas transações bloqueadas indevidamente. Esse é um ponto positivo, pois reduz o impacto negativo sobre a experiência do usuário.<br><br>
+1.  **Análise Exploratória Inicial (`01_777_Initial_Model.ipynb`):**
+    * Compreensão da estrutura dos dados e identificação do desbalanceamento na variável `Class`.
+    * Primeiros testes com algoritmos para estabelecer uma linha de base.
 
-- ### Recall Moderado (81,02%)<br>
+2.  **Modelagem com Dados Desbalanceados (`02_777_Alg_ML_unbalanced.ipynb`):**
+    * Avaliação dos algoritmos de Machine Learning com a base de dados original.
+    * Análise das métricas de Acurácia, Precisão e Recall.
 
-O modelo consegue capturar 81% das fraudes reais, o que é bom, mas há um 19% de fraudes não detectadas. Como o foco principal é reduzir falsos positivos, esse recall é aceitável dentro do contexto do negócio.<br><br>
+3.  **Experimentação com Balanceamento (`03_777_Alg_ML_USamp.ipynb` e `04_777_Alg_ML_OSamp.ipynb`):**
+    * Aplicação de diversas técnicas de Under-sampling e Over-sampling para tentar melhorar o desempenho em dados desbalanceados.
+    * Comparação dos resultados com a base desbalanceada.
 
-- ### Alta Acurácia (99,96%)<br>
+4.  **Normalização de Dados (`05_777_Alg_ML_normalization.ipynb`):**
+    * Investigação do impacto da normalização das características no desempenho dos modelos.
 
-Esse valor é muito alto, mas deve ser interpretado com cuidado, pois fraudes são eventos raros. Como o dataset é desbalanceado, a acurácia pode estar sendo inflada pelo grande número de transações legítimas corretamente classificadas.
+5.  **Validação Cruzada (`06_777_Alg_ML_Cross_validation.ipynb`):**
+    * Implementação de validação cruzada com os algoritmos de melhor desempenho para garantir a estabilidade e generalização do modelo.
+
+6.  **Otimização de Hiperparâmetros (`07_777_Alg_ML_Parameters.ipynb`):**
+    * Utilização de `GridSearchCV` para encontrar os melhores hiperparâmetros para o algoritmo escolhido (XGBoost) para maximizar as métricas desejadas.
+
+7.  **Modelo Final e Conclusão (`00_777_Final_Model.ipynb`):**
+    * Consolidação do melhor modelo, o qual revelou que a base desbalanceada, com o ajuste de hiperparâmetros, se mostrou a melhor abordagem para o objetivo de negócio (minimizar falsos positivos), mesmo após testar técnicas de balanceamento.
+
+## Instalação e Uso:
+
+Para configurar e executar este projeto em seu ambiente local, siga as instruções abaixo:
+
+1.  **Pré-requisitos:**
+    * Python 3.8+
+    * `pip` (gerenciador de pacotes do Python)
+
+2.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/Projeto_4_Modelo_de_Identificacao_de_Fraude.git](https://github.com/seu-usuario/Projeto_4_Modelo_de_Identificacao_de_Fraude.git)
+    cd Projeto_4_Modelo_de_Identificacao_de_Fraude
+    ```
+    *(Lembre-se de substituir `seu-usuario` pelo seu nome de usuário do GitHub ao clonar.)*
+
+3.  **Crie e ative um ambiente virtual (recomendado):**
+    ```bash
+    python -m venv venv
+    # No Windows:
+    venv\Scripts\activate
+    # No macOS/Linux:
+    source venv/bin/activate
+    ```
+
+4.  **Instale as dependências:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    **(Importante: Gere o arquivo `requirements.txt` executando `pip freeze > requirements.txt` no seu ambiente virtual após instalar todas as bibliotecas usadas nos notebooks.)**
+
+5.  **Como usar:**
+    Os notebooks Jupyter (`.ipynb` na pasta `notebooks/`) podem ser abertos e executados sequencialmente para replicar o desenvolvimento do projeto. O notebook `00_777_Final_Model.ipynb` contém o modelo final e a avaliação consolidada. O `Prediction_Fraud_Test_New_Data.ipynb` pode ser usado para testar o modelo com novos dados.
+
+    Para executar os notebooks, use Jupyter Lab ou Jupyter Notebook:
+    ```bash
+    jupyter lab
+    # ou
+    jupyter notebook
+    ```
+
+## Resultados e Conclusão:
+
+O modelo de detecção de fraudes foi avaliado utilizando validação cruzada com 10 dobras, resultando nas seguintes métricas médias para o modelo final (XGBoost com hiperparâmetros otimizados na base desbalanceada):
+
+-   **Acurácia:** 99,96%
+-   **Precisão:** 92,27%
+-   **Recall:** 81,02%
+
+## Interpretação das Métricas:
+
+Dado que o objetivo principal da empresa é minimizar falsos positivos para evitar reclamações de clientes, especialmente para transações corriqueiras com um valor máximo de R$5.000,00, a interpretação das métricas é a seguinte:
+
+-   ### Alta Precisão (92,27%)
+    Isso indica que a maioria das transações identificadas como fraude realmente são fraudes. Um alto valor de precisão significa que pouquíssimos clientes legítimos terão suas transações bloqueadas indevidamente. Este é um ponto crucial, pois reduz o impacto negativo sobre a experiência do usuário, um objetivo primário do negócio.
+
+-   ### Recall Moderado (81,02%)
+    O modelo consegue capturar 81% das fraudes reais, o que é um bom resultado. Isso implica que cerca de 19% das fraudes reais não são detectadas. No contexto de negócio, onde o foco principal é a satisfação do cliente (redução de falsos positivos), um recall ligeiramente menor é aceitável, contanto que a precisão seja alta. A empresa pode aceitar uma pequena porcentagem de fraudes não detectadas em troca de um fluxo de transações legítimas mais suave.
+
+-   ### Alta Acurácia (99,96%)
+    Esse valor é muito alto, mas deve ser interpretado com cautela em datasets desbalanceados. Embora o modelo classifique corretamente quase todas as transações, a acurácia pode ser inflada pelo grande número de transações legítimas (a classe majoritária) corretamente classificadas. As métricas de Precisão e Recall são mais informativas para problemas de classificação desbalanceados como a detecção de fraude.
+
+**Conclusão:** O modelo final alcança um equilíbrio estratégico entre a detecção eficaz de fraudes e a minimização de interrupções para clientes legítimos, alinhando-se perfeitamente com os requisitos de negócio para a Credicard no Brasil.
+
+## Licença:
+
+Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o arquivo [LICENSE.md](LICENSE.md) na raiz do repositório.
+
+## Contato:
+
+Se tiver alguma dúvida, sugestão ou quiser colaborar, sinta-se à vontade para entrar em contato:
+- **Nome:** Flávio Henrique Barbosa
+- **LinkedIn:** [Flávio Henrique Barbosa | LinkedIn](https://www.linkedin.com/in/fl%C3%A1vio-henrique-barbosa-38465938)
+- **Email:** flaviohenriquehb777@outlook.com
