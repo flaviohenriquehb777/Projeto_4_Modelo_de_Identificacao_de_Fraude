@@ -58,7 +58,7 @@ Para lidar com o desbalanceamento dos dados, foram testadas as seguintes técnic
 ## Estrutura do Projeto:
 Este repositório está organizado nos seguintes arquivos e diretórios:
 
-- `data/`: (Assumindo que seus dados estejam aqui ou sejam baixados/gerados) Contém a base de dados utilizada no projeto.
+- `data/`: Contém as bases de dados utilizadas no projeto (`credicard.csv.gz` e `credicard_tratado.parquet`).
 - `notebooks/`: Contém os notebooks Jupyter que documentam todo o processo de desenvolvimento.
     - `01_777_Initial_Model.ipynb`: Análise exploratória inicial e primeiros testes.
     - `02_777_Alg_ML_unbalanced.ipynb`: Avaliação dos algoritmos com o dataset desbalanceado.
