@@ -1,5 +1,7 @@
 # Modelo de Identificação de Fraude (Credicard - Brasil)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **Utilizando algoritmos de Machine Learning para criar um modelo robusto de identificação de transações fraudulentas.**
 
 ## Sumário
