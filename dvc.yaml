@@ -1,0 +1,16 @@
+stages:
+  prepare_data:
+    cmd: python src/config/prepare_data.py dados/credicard.csv.gz dados/credicard_tratado.parquet
+    deps:
+    - dados/credicard.csv.gz
+    outs:
+    - dados/credicard_tratado.parquet
+  train_model:
+    cmd: python src/config/train_model.py
+    deps:
+    - dados/credicard_tratado.parquet
+    - src/config/train_model.py
+    outs:
+    - models/model.pkl
+    metrics:
+    - metrics.json
