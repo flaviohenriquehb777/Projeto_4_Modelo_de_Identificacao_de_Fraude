@@ -56,11 +56,15 @@ Para lidar com o desbalanceamento dos dados, foram testadas as seguintes técnic
 - **Validação Cruzada (Cross-Validation)**: Empregado para avaliar a robustez do modelo, dividindo o dataset em múltiplas dobras.
 - **Otimização de Hiperparâmetros**: Utilização de `GridSearchCV` para encontrar a melhor combinação de parâmetros para os algoritmos.
 - **Curva Precision-Recall (PR AUC)**: Métrica crucial para avaliar o desempenho em datasets desbalanceados, focando na capacidade do modelo de identificar corretamente os positivos.
+- **Rastreamento de Experimentos (MLflow)**: Utilizado para registrar e gerenciar experimentos de forma organizada, salvando parâmetros, métricas e o modelo final.
 
+---
 ## Estrutura do Projeto:
 Este repositório está organizado nos seguintes arquivos e diretórios:
 
-- `data/`: Contém as bases de dados utilizadas no projeto (`credicard.csv.gz` e `credicard_tratado.parquet`).
+- `dados/`: Contém as bases de dados utilizadas no projeto (`credicard.csv.gz` e `credicard_tratado.parquet`).
+- `mlruns/`: Diretório criado pelo MLflow para armazenar os artefatos de rastreamento de experimentos, incluindo métricas, parâmetros e o modelo salvo.
+- `models/`: Contém o modelo final salvo em extensão .pkl.
 - `notebooks/`: Contém os notebooks Jupyter que documentam todo o processo de desenvolvimento.
     - `01_777_Initial_Model.ipynb`: Análise exploratória inicial e primeiros testes.
     - `02_777_Alg_ML_unbalanced.ipynb`: Avaliação dos algoritmos com o dataset desbalanceado.
@@ -69,12 +73,17 @@ Este repositório está organizado nos seguintes arquivos e diretórios:
     - `05_777_Alg_ML_normalization.ipynb`: Análise do impacto da normalização nos dados.
     - `06_777_Alg_ML_Cross_validation.ipynb`: Aplicação de validação cruzada para maior robustez.
     - `07_777_Alg_ML_Parameters.ipynb`: Otimização de hiperparâmetros usando `GridSearchCV`.
-    - `00_777_Final_Model.ipynb`: O notebook final que consolida o melhor modelo e as conclusões.
+    - `08_777_Model_Extension_pkl.ipynb`: O notebook final que consolida o melhor modelo e as conclusões.
+    - `09_777_MLFlow_Deployment.ipynb`: Notebook que implementa o rastreamento de experimentos com MLflow e o registro do modelo.
     - `Prediction_Fraud_Test_New_Data.ipynb`: Notebook para testar o modelo final com novos dados simulados.
+- `src/`: 
 - `README.md`: Este arquivo.
 - `LICENSE.md`: Arquivo contendo a licença do projeto (MIT).
 - `requirements.txt`: Lista de dependências Python para o projeto.
+- `dvc.yaml`: Arquivo de pipeline DVC para reprodução de experimentos.
+- `.dvc/` e `.dvcignore`: Arquivos e diretórios de configuração do DVC.
 
+---
 ## Processo de Desenvolvimento:
 
 O projeto passou por várias etapas de experimentação e refino:
@@ -100,9 +109,13 @@ O projeto passou por várias etapas de experimentação e refino:
 6.  **Otimização de Hiperparâmetros (`07_777_Alg_ML_Parameters.ipynb`):**
     * Utilização de `GridSearchCV` para encontrar os melhores hiperparâmetros para o algoritmo escolhido (XGBoost) para maximizar as métricas desejadas.
 
-7.  **Modelo Final e Conclusão (`00_777_Final_Model.ipynb`):**
+7.  **Modelo Final e Conclusão (`08_777_Model_Extension_pkl.ipynb`):**
     * Consolidação do melhor modelo, o qual revelou que a base desbalanceada, com o ajuste de hiperparâmetros, se mostrou a melhor abordagem para o objetivo de negócio (minimizar falsos positivos), mesmo após testar técnicas de balanceamento.
 
+8.  **Rastreamento com MLflow e DagsHub (`09_777_MLFlow_Deployment.ipynb`):**
+    * Implementação de um fluxo de trabalho de MLOps para rastrear parâmetros, métricas e o modelo final de forma reprodutível e centralizada no DagsHub.
+
+---
 ## Instalação e Uso:
 
 Para configurar e executar este projeto em seu ambiente local, siga as instruções abaixo:
@@ -110,13 +123,13 @@ Para configurar e executar este projeto em seu ambiente local, siga as instruç�
 1.  **Pré-requisitos:**
     * Python 3.8+
     * `pip` (gerenciador de pacotes do Python)
+    * `git`
 
 2.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/seu-usuario/Projeto_4_Modelo_de_Identificacao_de_Fraude.git](https://github.com/seu-usuario/Projeto_4_Modelo_de_Identificacao_de_Fraude.git)
+    git clone [https://github.com/flaviohenriquehb777/Projeto_4_Modelo_de_Identificacao_de_Fraude.git](https://github.com/flaviohenriquehb777/Projeto_4_Modelo_de_Identificacao_de_Fraude.git)
     cd Projeto_4_Modelo_de_Identificacao_de_Fraude
     ```
-    *(Lembre-se de substituir `seu-usuario` pelo seu nome de usuário do GitHub ao clonar.)*
 
 3.  **Crie e ative um ambiente virtual (recomendado):**
     ```bash
@@ -131,10 +144,10 @@ Para configurar e executar este projeto em seu ambiente local, siga as instruç�
     ```bash
     pip install -r requirements.txt
     ```
-    **(Importante: Gere o arquivo `requirements.txt` executando `pip freeze > requirements.txt` no seu ambiente virtual após instalar todas as bibliotecas usadas nos notebooks.)**
+    **Lembre-se de atualizar o `requirements.txt` com `pip freeze > requirements.txt` após instalar novas bibliotecas.**
 
 5.  **Como usar:**
-    Os notebooks Jupyter (`.ipynb` na pasta `notebooks/`) podem ser abertos e executados sequencialmente para replicar o desenvolvimento do projeto. O notebook `00_777_Final_Model.ipynb` contém o modelo final e a avaliação consolidada. O `Prediction_Fraud_Test_New_Data.ipynb` pode ser usado para testar o modelo com novos dados.
+    Os notebooks Jupyter (`.ipynb` na pasta `notebooks/`) podem ser abertos e executados sequencialmente para replicar o desenvolvimento do projeto. O notebook `09_777_MLFlow_Deployment.ipynb` é o ponto de partida para ver a implementação de MLOps.
 
     Para executar os notebooks, use Jupyter Lab ou Jupyter Notebook:
     ```bash
@@ -142,7 +155,9 @@ Para configurar e executar este projeto em seu ambiente local, siga as instruç�
     # ou
     jupyter notebook
     ```
+    Você pode visualizar todos os experimentos e os artefatos gerados pelo MLflow diretamente na aba **"Experiments"** do seu repositório no DagsHub.
 
+---
 ## Resultados e Conclusão:
 
 O modelo de detecção de fraudes foi avaliado utilizando validação cruzada com 10 dobras, resultando nas seguintes métricas médias para o modelo final (XGBoost com hiperparâmetros otimizados na base desbalanceada):
@@ -151,6 +166,7 @@ O modelo de detecção de fraudes foi avaliado utilizando validação cruzada co
 -   **Precisão:** 92,27%
 -   **Recall:** 81,02%
 
+---
 ## Interpretação das Métricas:
 
 Dado que o objetivo principal da empresa é minimizar falsos positivos para evitar reclamações de clientes, especialmente para transações corriqueiras com um valor máximo de R$5.000,00, a interpretação das métricas é a seguinte:
@@ -166,10 +182,12 @@ Dado que o objetivo principal da empresa é minimizar falsos positivos para evit
 
 **Conclusão:** O modelo final alcança um equilíbrio estratégico entre a detecção eficaz de fraudes e a minimização de interrupções para clientes legítimos, alinhando-se perfeitamente com os requisitos de negócio para a Credicard no Brasil.
 
+---
 ## Licença:
 
 Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o arquivo [LICENSE.md](LICENSE.md) na raiz do repositório.
 
+---
 ## Contato:
 
 Se tiver alguma dúvida, sugestão ou quiser colaborar, sinta-se à vontade para entrar em contato:
