@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/models/m-f44d58042fac41d0a7fefdd0b7fcae80/artifacts
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.12.3
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: xgb
+    xgb_version: 2.1.4
+mlflow_version: 3.3.2
+model_id: m-f44d58042fac41d0a7fefdd0b7fcae80
+model_size_bytes: 427272
+model_uuid: m-f44d58042fac41d0a7fefdd0b7fcae80
+prompts: null
+run_id: 7e0eec304c9f4e9280c01907a0d2f286
+utc_time_created: '2025-09-02 10:51:20.605265'

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/flavi/Documents/GitHub/Projeto_4_Modelo_de_Identificacao_de_Fraude/mlruns/128518284461930217/d73959e1a7b74da9a62125acefc118ce/artifacts
+end_time: 1756811730629
+entry_point_name: ''
+experiment_id: '128518284461930217'
+lifecycle_stage: active
+run_id: d73959e1a7b74da9a62125acefc118ce
+run_name: abrasive-toad-41
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756811702200
+status: 3
+tags: []
+user_id: FHB_DS
