@@ -1,0 +1,34 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python src/config/prepare_data.py dados/credicard.csv.gz dados/credicard_tratado.parquet
+    deps:
+    - path: dados/credicard.csv.gz
+      hash: md5
+      md5: c843c908899eec97bc0b050581591135
+      size: 68792721
+    outs:
+    - path: dados/credicard_tratado.parquet
+      hash: md5
+      md5: 18a66885c8bc0187884e0e8ce92f25a2
+      size: 73231075
+  train_model:
+    cmd: python src/config/train_model.py
+    deps:
+    - path: dados/credicard_tratado.parquet
+      hash: md5
+      md5: 18a66885c8bc0187884e0e8ce92f25a2
+      size: 73231075
+    - path: src/config/train_model.py
+      hash: md5
+      md5: d52ed8551c4adc8c8592c81a2ba98134
+      size: 1150
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 106c58901170399a413b112d39689dd3
+      size: 95
+    - path: models/model.pkl
+      hash: md5
+      md5: 9de4f6a99e41f4e34dd96a3db65c48d4
+      size: 192522
