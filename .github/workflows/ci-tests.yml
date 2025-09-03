@@ -1,0 +1,62 @@
+name: CI Tests - Fraud Detection
+on: [push, pull_request]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest
+
+    - name: Install DVC
+      run: |
+        pip install dvc
+
+    - name: Configure DVC with DagsHub
+      run: |
+        dvc remote add origin https://dagshub.com/${{ secrets.DAGSHUB_USER }}/${{ secrets.DAGSHUB_REPO_NAME }}.dvc
+        dvc remote modify origin --local auth basic
+        dvc remote modify origin --local user ${{ secrets.DAGSHUB_USER }}
+        dvc remote modify origin --local password ${{ secrets.DAGSHUB_TOKEN }}
+
+    - name: Pull data and model from DVC
+      run: |
+        dvc pull
+
+    - name: Run basic tests
+      run: |
+        pytest tests/test_basic.py -v
+
+    - name: Run data quality tests
+      run: |
+        pytest tests/test_data.py -v
+
+    - name: Run model tests
+      run: |
+        pytest tests/test_model.py -v
+
+    - name: Run module tests
+      run: |
+        pytest tests/test_modelos_module.py -v
+
+    - name: Test DVC reproducibility
+      run: |
+        echo "Verificando se DVC está configurado corretamente..."
+        dvc status
+        dvc version
