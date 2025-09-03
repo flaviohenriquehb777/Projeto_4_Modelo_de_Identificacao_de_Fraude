@@ -62,9 +62,10 @@ Para lidar com o desbalanceamento dos dados, foram testadas as seguintes técnic
 ## Estrutura do Projeto:
 Este repositório está organizado nos seguintes arquivos e diretórios:
 
-- `dados/`: Contém as bases de dados utilizadas no projeto (`credicard.csv.gz` e `credicard_tratado.parquet`).
+- `.dvc/`: Diretório oculto utilizado pelo DVC.
 - `mlruns/`: Diretório criado pelo MLflow para armazenar os artefatos de rastreamento de experimentos, incluindo métricas, parâmetros e o modelo salvo.
 - `models/`: Contém o modelo final salvo em extensão .pkl.
+- `dados/`: Contém as bases de dados utilizadas no projeto (`credicard.csv.gz` e `credicard_tratado.parquet`).
 - `notebooks/`: Contém os notebooks Jupyter que documentam todo o processo de desenvolvimento.
     - `01_777_Initial_Model.ipynb`: Análise exploratória inicial e primeiros testes.
     - `02_777_Alg_ML_unbalanced.ipynb`: Avaliação dos algoritmos com o dataset desbalanceado.
@@ -76,7 +77,7 @@ Este repositório está organizado nos seguintes arquivos e diretórios:
     - `08_777_Model_Extension_pkl.ipynb`: O notebook final que consolida o melhor modelo e as conclusões.
     - `09_777_MLFlow_Deployment.ipynb`: Notebook que implementa o rastreamento de experimentos com MLflow e o registro do modelo.
     - `Prediction_Fraud_Test_New_Data.ipynb`: Notebook para testar o modelo final com novos dados simulados.
-- `src/`: 
+- `src/config/`: Contém os arquivos `.py` utilizados no projeto.
 - `README.md`: Este arquivo.
 - `LICENSE.md`: Arquivo contendo a licença do projeto (MIT).
 - `requirements.txt`: Lista de dependências Python para o projeto.
