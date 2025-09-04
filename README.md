@@ -74,10 +74,12 @@ O dataset é altamente desbalanceado, com pouquíssimas fraudes em relação às
 
 ## 🚀 MLOps e Infraestrutura Profissional
 
-- **Versionamento com DVC**: dados e modelos versionados
-- **MLflow**: rastreamento de experimentos e model registry
-- **CI/CD com GitHub Actions**: testes automatizados e validação
-- **Integração com DagsHub**: repositório central e colaboração
+O projeto utiliza um pipeline de MLOps robusto para garantir a reprodutibilidade, rastreabilidade e facilidade de deployment dos modelos.
+
+- **Versionamento com DVC:** dados e modelos são versionados, garantindo que o pipeline de ML possa ser reproduzido com qualquer versão do dataset.
+- **MLflow e DagsHub:** a combinação perfeita para rastrear e gerenciar experimentos. Cada execução de modelo é registrada com seus parâmetros, métricas e o próprio modelo. O MLflow Model Registry atua como o repositório central para modelos prontos para produção.
+- **CI/CD com GitHub Actions:** testes automatizados e validação de código, assegurando a qualidade antes do merge.
+- **Integração total com DagsHub:** um hub de MLOps que centraliza o código (via Git), os dados (via DVC) e os experimentos (via MLflow) em um único local, facilitando a colaboração e a transparência.
 
 ---
 
@@ -140,14 +142,14 @@ Projeto_4_Modelo_de_Identificacao_de_Fraude/
 
 ## 🔬 Processo de Desenvolvimento
 
-1. Análise Exploratória Inicial  
-2. Modelagem com dados desbalanceados  
-3. Balanceamento (Over/Under-sampling)  
-4. Normalização  
-5. Cross-validation  
-6. Otimização de hiperparâmetros  
-7. Consolidação do modelo final (XGBoost)  
-8. MLflow + DagsHub para rastreamento e deploy  
+1. Análise Exploratória Inicial  
+2. Modelagem com dados desbalanceados  
+3. Balanceamento (Over/Under-sampling)  
+4. Normalização  
+5. Cross-validation  
+6. Rastreamento de Experimentos com MLflow  
+7. Seleção do Melhor Modelo a partir do Histórico de Experimentos  
+8. Registro do Modelo no MLflow Model Registry  
 
 ---
 
@@ -186,9 +188,11 @@ jupyter lab
 ---
 
 ## ✨ Diferenciais do Projeto
+
 - Implementação de **MLOps completo** (DVC + MLflow + GitHub Actions + DagsHub)
 - **Modelo final otimizado** com XGBoost
-- Equilíbrio entre **alta precisão** e **satisfação do cliente**
+- Equilíbrio estratégico entre **alta precisão** e **satisfação do cliente**
+- Ciclo de vida do modelo gerenciado profissionalmente com o **MLflow Model Registry**
 
 ---
 
@@ -229,6 +233,6 @@ Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE.md
 
 Se tiver alguma dúvida, sugestão ou quiser colaborar, sinta-se à vontade para entrar em contato:
 - **Nome:** Flávio Henrique Barbosa  
-- **LinkedIn:** [Flávio Henrique Barbosa | LinkedIn](https://www.linkedin.com/in/fl%C3%A1vio-henrique-barbosa-38465938)  
+- **LinkedIn:** [Flávio Henrique Barbosa | LinkedIn](https://www.linkedin.com/in/fl%C3%A1vio-henrique-barbosa-38465938) 
 - **Email:** flaviohenriquehb777@outlook.com  
 - **DagsHub:** https://dagshub.com/flaviohenriquehb777  
