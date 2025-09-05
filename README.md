@@ -153,8 +153,8 @@ Projeto_4_Modelo_de_Identificacao_de_Fraude/
 │       ├── paths.py
 │       ├── prepare_data.py
 │       ├── train_model.py
-│       ├── generate_shap_insights.py     # NOVO!
-│       ├── generate_shap_report.py       # NOVO!
+│       ├── generate_shap_insights.py     
+│       ├── generate_shap_report.py       
 │       └── .gitkeep
 ├── tests/                      # Testes automatizados
 │   ├── test_basic.py
