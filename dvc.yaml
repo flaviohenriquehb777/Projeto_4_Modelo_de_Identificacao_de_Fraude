@@ -1,4 +1,4 @@
-stages:
+﻿stages:
   prepare_data:
     cmd: python src/config/prepare_data.py dados/credicard.csv.gz dados/credicard_tratado.parquet
     deps:
@@ -16,3 +16,12 @@ stages:
     metrics:
     - metrics.json
 
+  generate_shap_insights:
+    cmd: python src/config/generate_shap_insights.py
+    deps:
+      - src/config/generate_shap_insights.py
+      - models/model.pkl
+      - dados/credicard_tratado.parquet
+    outs:
+      - reports/shap_explanations:
+          persist: true

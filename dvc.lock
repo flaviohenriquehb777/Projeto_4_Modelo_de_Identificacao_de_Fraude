@@ -32,3 +32,24 @@ stages:
       hash: md5
       md5: 9de4f6a99e41f4e34dd96a3db65c48d4
       size: 192522
+  generate_shap_insights:
+    cmd: python src/config/generate_shap_insights.py
+    deps:
+    - path: dados/credicard_tratado.parquet
+      hash: md5
+      md5: 18a66885c8bc0187884e0e8ce92f25a2
+      size: 73231075
+    - path: models/model.pkl
+      hash: md5
+      md5: 9de4f6a99e41f4e34dd96a3db65c48d4
+      size: 192522
+    - path: src/config/generate_shap_insights.py
+      hash: md5
+      md5: 0ec4d20af5599ca2eacd6cbea4362722
+      size: 7469
+    outs:
+    - path: reports/shap_explanations
+      hash: md5
+      md5: b64541b99604d94233e59d904809c55f.dir
+      size: 103229799
+      nfiles: 12
