@@ -5,7 +5,7 @@ stages:
     - dados/credicard.csv.gz
     outs:
     - dados/credicard_tratado.parquet
-  
+
   train_model:
     cmd: python src/config/train_model.py
     deps:
@@ -15,16 +15,4 @@ stages:
     - models/model.pkl
     metrics:
     - metrics.json
-    
-  # ✅ NOVO ESTÁGIO - PERFEITO!
-generate_shap_insights:
-  cmd: python src/config/generate_shap_insights.py
-  deps:
-    - src/config/generate_shap_insights.py
-    - models/model.pkl
-    - dados/credicard_tratado.parquet
-  outs:
-    - reports/shap_explanations:
-        persist: true
-  metrics:
-    - reports/shap_explanations/shap_stats.json
+
