@@ -53,3 +53,20 @@ stages:
       md5: b64541b99604d94233e59d904809c55f.dir
       size: 103229799
       nfiles: 12
+  generate_shap_report:
+    cmd: python src/config/generate_shap_report.py
+    deps:
+    - path: reports/shap_explanations/
+      hash: md5
+      md5: b64541b99604d94233e59d904809c55f.dir
+      size: 103229799
+      nfiles: 12
+    - path: src/config/generate_shap_report.py
+      hash: md5
+      md5: 9f412111951fdc6cb27f42b36dd70c03
+      size: 4619
+    outs:
+    - path: reports/shap_report.pdf
+      hash: md5
+      md5: 1dc492b6896c1676ae1fd526ea0ad560
+      size: 2656374

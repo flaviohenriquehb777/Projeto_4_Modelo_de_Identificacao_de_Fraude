@@ -25,3 +25,11 @@
     outs:
       - reports/shap_explanations:
           persist: true
+
+  generate_shap_report:
+    cmd: python src/config/generate_shap_report.py
+    deps:
+      - src/config/generate_shap_report.py
+      - reports/shap_explanations/
+    outs:
+      - reports/shap_report.pdf
