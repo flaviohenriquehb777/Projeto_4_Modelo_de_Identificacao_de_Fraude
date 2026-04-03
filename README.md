@@ -2,10 +2,10 @@
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 [![DVC Managed](https://img.shields.io/badge/DVC-Managed-blue)]()
-[![CI Tests](https://github.com/flaviohenriquehb777/Projeto_4_Modelo_de_Identificacao_de_Fraude/actions/workflows/ci-tests.yml/badge.svg)](https://github.com/flaviohenriquehb777/Projeto_4_Modelo_de_Identificacao_de_Fraude/actions/workflows/ci-tests.yml)
+[![CI Tests](https://github.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro/actions/workflows/ci-tests.yml/badge.svg)](https://github.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro/actions/workflows/ci-tests.yml)
 [![MLflow Tracking](https://img.shields.io/badge/MLflow-Tracking-orange)]()
 [![SHAP Explainability](https://img.shields.io/badge/SHAP-Explainability-purple)]()
-[![DagsHub Repository](https://img.shields.io/badge/DagsHub-Repository-purple)](https://dagshub.com/flaviohenriquehb777/Projeto_4_Modelo_de_Identificacao_de_Fraude)
+[![DagsHub Repository](https://img.shields.io/badge/DagsHub-Repository-purple)](https://dagshub.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)
 ![scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-blueviolet)
@@ -17,15 +17,15 @@ Utilizando algoritmos de Machine Learning e práticas de MLOps para criar um mod
 
 ## 📋 Sumário
 
-- [Descrição do Projeto](#-descrição-do-projeto)
+- [Descrição do Modelo](#-descrição-do-modelo)
 - [Contexto dos Dados](#-contexto-dos-dados)
 - [Algoritmos e Técnicas Utilizadas](#-algoritmos-e-técnicas-utilizadas)
 - [MLOps e Infraestrutura Profissional](#-mlops-e-infraestrutura-profissional)
 - [SHAP Explainability](#-shap-explainability)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Estrutura do Modelo](#-estrutura-do-modelo)
 - [Processo de Desenvolvimento](#-processo-de-desenvolvimento)
 - [Instalação e Uso](#-instalação-e-uso)
-- [Diferenciais do Projeto](#-diferenciais-do-projeto)
+- [Diferenciais do Modelo](#-diferenciais-do-modelo)
 - [Resultados e Conclusão](#-resultados-e-conclusão)
 - [Interpretação das Métricas](#-interpretação-das-métricas)
 - [Roadmap](#-roadmap)
@@ -34,9 +34,9 @@ Utilizando algoritmos de Machine Learning e práticas de MLOps para criar um mod
 
 ---
 
-## 📊 Descrição do Projeto
+## 📊 Descrição do Modelo
 
-Este projeto tem como objetivo desenvolver um modelo de Machine Learning capaz de identificar transações financeiras fraudulentas, com foco em otimizar a balança entre a detecção de fraudes e a minimização de falsos positivos. O modelo final foi ajustado para atender às necessidades de negócio, garantindo **alta precisão** para evitar bloqueios indevidos e **explicabilidade completa** via SHAP.
+Este modelo tem como objetivo desenvolver um modelo de Machine Learning capaz de identificar transações financeiras fraudulentas, com foco em otimizar a balança entre a detecção de fraudes e a minimização de falsos positivos. O modelo final foi ajustado para atender às necessidades de negócio, garantindo **alta precisão** para evitar bloqueios indevidos e **explicabilidade completa** via SHAP.
 
 ---
 
@@ -77,7 +77,7 @@ O dataset é altamente desbalanceado, com pouquíssimas fraudes em relação às
 
 ## 🚀 MLOps e Infraestrutura Profissional
 
-O projeto utiliza um pipeline de MLOps robusto para garantir a reprodutibilidade, rastreabilidade e facilidade de deployment dos modelos.
+O modelo utiliza um pipeline de MLOps robusto para garantir a reprodutibilidade, rastreabilidade e facilidade de deployment dos modelos.
 
 - **Versionamento com DVC:** dados, modelos e artefatos de explainability são versionados, garantindo que o pipeline de ML possa ser reproduzido com qualquer versão do dataset.
 - **MLflow e DagsHub:** a combinação perfeita para rastrear e gerenciar experimentos. Cada execução de modelo é registrada com seus parâmetros, métricas e o próprio modelo. O MLflow Model Registry atua como o repositório central para modelos prontos para produção.
@@ -108,13 +108,13 @@ O projeto inclui explicações completas do modelo usando SHAP (SHapley Additive
 ## 📂 Estrutura do Projeto
 
 ```text
-Projeto_4_Modelo_de_Identificacao_de_Fraude/
+Modelo_de_Deteccao_de_Fraude-Financeiro/
 ├── .dvc/                       # Configurações do DVC
 ├── .github/workflows/          # CI/CD com GitHub Actions
 │   └── ci-tests.yml            # Pipeline de testes automatizados
 ├── .dvcignore                  # Arquivos ignorados pelo DVC
 ├── .gitignore                  # Arquivos ignorados pelo Git
-├── config/                     # Configurações do projeto
+├── config/                     # Configurações do modelo
 ├── dados/                      # Dados versionados com DVC
 │   ├── creditcard.csv.gz.dvc   # Ponteiro para dados originais
 │   └── .gitignore              # Ignora arquivos de dados
@@ -198,8 +198,8 @@ Projeto_4_Modelo_de_Identificacao_de_Fraude/
 ### Passos
 ```bash
 # Clone o repositório
-git clone https://github.com/flaviohenriquehb777/Projeto_4_Modelo_de_Identificacao_de_Fraude.git
-cd Projeto_4_Modelo_de_Identificacao_de_Fraude
+git clone https://github.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro.git
+cd Modelo_de_Deteccao_de_Fraude-Financeiro
 
 # Baixe os dados e artefatos
 dvc pull
@@ -228,7 +228,7 @@ pytest tests/ -v
 jupyter lab
 ```
 
-## ✨ Diferenciais do Projeto
+## ✨ Diferenciais do Modelo
 
 - Implementação de **MLOps completo** (DVC + MLflow + GitHub Actions + DagsHub)
 - **Modelo final otimizado** com XGBoost
