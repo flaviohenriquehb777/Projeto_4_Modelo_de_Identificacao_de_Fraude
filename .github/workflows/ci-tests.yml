@@ -30,10 +30,12 @@ jobs:
 
     - name: Configure DVC with DagsHub
       run: |
-        dvc remote modify --local dagshub url https://dagshub.com/${{ github.repository_owner }}/${{ github.event.repository.name }}.dvc
+        dvc remote modify --local dagshub url https://dagshub.com/${{ secrets.DAGSHUB_USER || github.repository_owner }}/${{ secrets.DAGSHUB_REPO_NAME || github.event.repository.name }}.dvc
         dvc remote modify --local dagshub auth basic
-        dvc remote modify --local dagshub user ${{ github.repository_owner }}
+        dvc remote modify --local dagshub user ${{ secrets.DAGSHUB_USER || github.repository_owner }}
         dvc remote modify --local dagshub password ${{ secrets.DAGSHUB_TOKEN }}
+        dvc remote list
+        dvc remote default
 
     - name: Pull data and model from DVC
       run: |
