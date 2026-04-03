@@ -89,7 +89,7 @@ O modelo utiliza um pipeline de MLOps robusto para garantir a reprodutibilidade,
 
 ## 🔍 SHAP Explainability
 
-O projeto inclui explicações completas do modelo usando SHAP (SHapley Additive exPlanations):
+O modelo inclui explicações completas usando SHAP (SHapley Additive exPlanations):
 
 ### 📊 Artefatos Gerados:
 - **Summary Plots:** Visualização da importância global das features
@@ -105,7 +105,7 @@ O projeto inclui explicações completas do modelo usando SHAP (SHapley Additive
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do Modelo
 
 ```text
 Modelo_de_Deteccao_de_Fraude-Financeiro/
@@ -169,7 +169,7 @@ Modelo_de_Deteccao_de_Fraude-Financeiro/
 ├── dvc.lock                    # Lock file do DVC
 ├── dvc.yaml                    # Pipeline do DVC
 ├── metrics.json                # Métricas do modelo
-└── requirements.txt            # Dependências do projeto
+└── requirements.txt            # Dependências do modelo
 ```
 
 ## 🔬 Processo de Desenvolvimento
@@ -228,6 +228,14 @@ pytest tests/ -v
 jupyter lab
 ```
 
+Se o `dvc pull` solicitar autenticação, configure as credenciais do DagsHub localmente (sem versionar segredos):
+
+```bash
+dvc remote modify --local dagshub auth basic
+dvc remote modify --local dagshub user <seu_usuario_dagshub>
+dvc remote modify --local dagshub password <seu_token_dagshub>
+```
+
 ## ✨ Diferenciais do Modelo
 
 - Implementação de **MLOps completo** (DVC + MLflow + GitHub Actions + DagsHub)
@@ -271,7 +279,7 @@ O modelo final alcança um equilíbrio estratégico entre **detecção eficaz de
 
 ## 📜 Licença
 
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE.md](LICENSE.md).
+Este repositório está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE.md](LICENSE.md).
 
 ---
 
