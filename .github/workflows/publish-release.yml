@@ -5,6 +5,7 @@ on:
     tags:
       - "v*"
       - "snapshot"
+  create:
   workflow_dispatch:
     inputs:
       tag:
@@ -17,6 +18,7 @@ permissions:
 
 jobs:
   publish-release:
+    if: github.event_name != 'create' || github.event.ref_type == 'tag'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
