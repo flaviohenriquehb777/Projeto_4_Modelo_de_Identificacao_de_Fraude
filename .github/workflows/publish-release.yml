@@ -29,11 +29,13 @@ jobs:
       - name: Publish or update release
         env:
           GH_TOKEN: ${{ github.token }}
-          OWNER: ${{ github.repository_owner }}
-          REPO: ${{ github.event.repository.name }}
+          REPO_FULL: ${{ github.repository }}
           TAG: ${{ inputs.tag || github.ref_name }}
         run: |
           set -euo pipefail
+
+          OWNER="${REPO_FULL%%/*}"
+          REPO="${REPO_FULL##*/}"
 
           sha="$(git rev-list -n 1 "$TAG")"
 
@@ -59,20 +61,20 @@ jobs:
           release_id="$(gh api "/repos/$OWNER/$REPO/releases/tags/$TAG" -q .id 2>/dev/null || true)"
 
           if [ -z "$release_id" ]; then
-            gh api -X POST "/repos/$OWNER/$REPO/releases" \
+            created="$(gh api -X POST "/repos/$OWNER/$REPO/releases" \
               -f tag_name="$TAG" \
               -f name="$title" \
               -f body="$notes" \
               -F prerelease="$prerelease" \
-              -F draft=false > /dev/null
+              -F draft=false)"
           else
-            gh api -X PATCH "/repos/$OWNER/$REPO/releases/$release_id" \
+            created="$(gh api -X PATCH "/repos/$OWNER/$REPO/releases/$release_id" \
               -f tag_name="$TAG" \
               -f name="$title" \
               -f body="$notes" \
               -F prerelease="$prerelease" \
-              -F draft=false > /dev/null
+              -F draft=false)"
           fi
 
-          html_url="$(gh api "/repos/$OWNER/$REPO/releases/tags/$TAG" -q .html_url)"
+          html_url="$(echo "$created" | jq -r .html_url)"
           echo "Release pronta: $html_url"
