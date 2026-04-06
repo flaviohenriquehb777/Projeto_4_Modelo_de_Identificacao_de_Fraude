@@ -58,23 +58,27 @@ jobs:
             notes=$'Release publicada automaticamente.\n\n- Tag: '"$TAG"$'\n- Commit: '"$sha"
           fi
 
-          release_id="$(gh api "/repos/$OWNER/$REPO/releases/tags/$TAG" -q .id 2>/dev/null || true)"
-
-          if [ -z "$release_id" ]; then
-            created="$(gh api -X POST "/repos/$OWNER/$REPO/releases" \
-              -f tag_name="$TAG" \
-              -f name="$title" \
-              -f body="$notes" \
-              -F prerelease="$prerelease" \
-              -F draft=false)"
-          else
-            created="$(gh api -X PATCH "/repos/$OWNER/$REPO/releases/$release_id" \
-              -f tag_name="$TAG" \
-              -f name="$title" \
-              -f body="$notes" \
-              -F prerelease="$prerelease" \
-              -F draft=false)"
+          release_id=""
+          if id="$(gh api "/repos/$OWNER/$REPO/releases/tags/$TAG" -q .id 2>/dev/null)"; then
+            release_id="$id"
           fi
 
-          html_url="$(echo "$created" | jq -r .html_url)"
+          if [ -z "$release_id" ]; then
+            html_url="$(gh api -X POST "/repos/$OWNER/$REPO/releases" \
+              -f tag_name="$TAG" \
+              -f name="$title" \
+              -f body="$notes" \
+              -F prerelease="$prerelease" \
+              -F draft=false \
+              -q .html_url)"
+          else
+            html_url="$(gh api -X PATCH "/repos/$OWNER/$REPO/releases/$release_id" \
+              -f tag_name="$TAG" \
+              -f name="$title" \
+              -f body="$notes" \
+              -F prerelease="$prerelease" \
+              -F draft=false \
+              -q .html_url)"
+          fi
+
           echo "Release pronta: $html_url"
