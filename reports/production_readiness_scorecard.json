@@ -1,0 +1,39 @@
+{
+  "repository": {
+    "project_name": "Modelo_de_Deteccao_de_Fraude-Financeiro",
+    "dvc_clone_zero_friction_branch": true,
+    "dagshub_public_repository": true
+  },
+  "model_readiness": {
+    "acceptance_passed": true,
+    "decision_threshold_versioned": true,
+    "operational_model_present": true,
+    "calibrated_precision": 0.9264367816091954,
+    "calibrated_recall": 0.8191056910569106,
+    "alignment_score": 0.9836207457246986
+  },
+  "data_readiness": {
+    "quality_report_passed": true,
+    "processed_rows": 284807,
+    "null_count": 0,
+    "time_scaled_to_unit_interval": true
+  },
+  "public_evidence": {
+    "public_experiments": 7,
+    "public_models": 3,
+    "best_public_model_id": "m-695031f059db422fb7c12c7e47ef58e9",
+    "best_public_model_name": "Treinamento do Modelo - XGBoost Otimizado"
+  },
+  "serving_readiness": {
+    "cli_entrypoint": "python -m src.serving.cli",
+    "threshold_source": "models/model_metadata.json",
+    "inference_contract_module": "src/serving/inference.py"
+  },
+  "known_environment_notes": {
+    "clean_venv_recommended": true,
+    "warning_sources": [
+      "ambiente local Anaconda com numexpr desatualizado",
+      "coexistencia local entre PyFPDF e fpdf2 fora do reposit\u00f3rio"
+    ]
+  }
+}

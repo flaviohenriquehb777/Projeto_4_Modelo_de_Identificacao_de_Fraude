@@ -1,15 +1,15 @@
 import pandas as pd
 import pytest
-import os
+from src.config.paths import PROCESSED_DATA_PATH
 
 def test_data_file_exists():
     """Testa se o arquivo de dados existe após DVC pull"""
-    assert os.path.exists('dados/credicard_tratado.parquet'), "Arquivo de dados não encontrado - execute 'dvc pull' primeiro"
+    assert PROCESSED_DATA_PATH.exists(), "Arquivo de dados não encontrado - execute 'dvc pull' primeiro"
 
 def test_data_quality():
     """Testa a qualidade básica dos dados processados"""
     try:
-        df = pd.read_parquet('dados/credicard_tratado.parquet')
+        df = pd.read_parquet(PROCESSED_DATA_PATH)
         
         # Testes de qualidade
         assert not df.empty, "DataFrame está vazio"
@@ -20,6 +20,9 @@ def test_data_quality():
         
         # Verifica se há dados suficientes
         assert len(df) > 1000, "Dataset muito pequeno"
+
+        assert 'Time' in df.columns, "Coluna Time nao encontrada"
+        assert 'Amount' in df.columns, "Coluna Amount nao encontrada"
         
     except Exception as e:
         pytest.fail(f"Falha ao carregar ou validar dados: {str(e)}")

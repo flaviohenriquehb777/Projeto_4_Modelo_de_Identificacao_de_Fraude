@@ -5,68 +5,112 @@ stages:
     deps:
     - path: dados/credicard.csv.gz
       hash: md5
-      md5: c843c908899eec97bc0b050581591135
-      size: 68792721
+      md5: 4c61e4763bb30831a01e9f50e60deab0
+      size: 68511515
+    - path: params.yaml
+      hash: md5
+      md5: 8bbbece797f795858fd94c4bff3cba56
+      size: 926
+    - path: src/config/paths.py
+      hash: md5
+      md5: 6a7faf531db77c12861acf41238d71d8
+      size: 1093
+    - path: src/config/prepare_data.py
+      hash: md5
+      md5: 6bbe129107ae98006044a4d8c0877971
+      size: 5787
     outs:
     - path: dados/credicard_tratado.parquet
       hash: md5
-      md5: 18a66885c8bc0187884e0e8ce92f25a2
-      size: 73231075
+      md5: 9fd78d0e9215f298cd4e43fe2ca5a6d2
+      size: 73823197
+    - path: reports/data_quality_report.json
+      hash: md5
+      md5: 2833ca078220a423339d857c819ad104
+      size: 588
   train_model:
     cmd: python src/config/train_model.py
     deps:
     - path: dados/credicard_tratado.parquet
       hash: md5
-      md5: 18a66885c8bc0187884e0e8ce92f25a2
-      size: 73231075
+      md5: 9fd78d0e9215f298cd4e43fe2ca5a6d2
+      size: 73823197
+    - path: params.yaml
+      hash: md5
+      md5: 8bbbece797f795858fd94c4bff3cba56
+      size: 926
+    - path: src/config/paths.py
+      hash: md5
+      md5: 6a7faf531db77c12861acf41238d71d8
+      size: 1093
     - path: src/config/train_model.py
       hash: md5
-      md5: d52ed8551c4adc8c8592c81a2ba98134
-      size: 1150
+      md5: 8b1f8edc5a5f1487edc592d482bc4709
+      size: 11097
     outs:
     - path: metrics.json
       hash: md5
-      md5: 106c58901170399a413b112d39689dd3
-      size: 95
+      md5: 780a6da3fe86ad56016847f33a49d6cd
+      size: 2135
     - path: models/model.pkl
       hash: md5
-      md5: 9de4f6a99e41f4e34dd96a3db65c48d4
-      size: 192522
+      md5: 67bca6135351c718dc3d851695fe8787
+      size: 887464
+    - path: models/model_metadata.json
+      hash: md5
+      md5: 07d7a5d6d30e62c6d3209711a0b70a77
+      size: 960
   generate_shap_insights:
     cmd: python src/config/generate_shap_insights.py
     deps:
     - path: dados/credicard_tratado.parquet
       hash: md5
-      md5: 18a66885c8bc0187884e0e8ce92f25a2
-      size: 73231075
+      md5: 9fd78d0e9215f298cd4e43fe2ca5a6d2
+      size: 73823197
     - path: models/model.pkl
       hash: md5
-      md5: 9de4f6a99e41f4e34dd96a3db65c48d4
-      size: 192522
+      md5: 67bca6135351c718dc3d851695fe8787
+      size: 887464
+    - path: models/model_metadata.json
+      hash: md5
+      md5: 07d7a5d6d30e62c6d3209711a0b70a77
+      size: 960
+    - path: params.yaml
+      hash: md5
+      md5: 8bbbece797f795858fd94c4bff3cba56
+      size: 926
     - path: src/config/generate_shap_insights.py
       hash: md5
-      md5: 0ec4d20af5599ca2eacd6cbea4362722
-      size: 7469
+      md5: f7f30fa6fdf417ee330e6bf4fd2e259c
+      size: 8518
+    - path: src/config/paths.py
+      hash: md5
+      md5: 6a7faf531db77c12861acf41238d71d8
+      size: 1093
     outs:
     - path: reports/shap_explanations
       hash: md5
-      md5: b64541b99604d94233e59d904809c55f.dir
-      size: 103229799
-      nfiles: 12
+      md5: 0fef8e1405702443d1907872b1947159.dir
+      size: 3059621
+      nfiles: 13
   generate_shap_report:
     cmd: python src/config/generate_shap_report.py
     deps:
     - path: reports/shap_explanations/
       hash: md5
-      md5: b64541b99604d94233e59d904809c55f.dir
-      size: 103229799
-      nfiles: 12
+      md5: 0fef8e1405702443d1907872b1947159.dir
+      size: 3059621
+      nfiles: 13
     - path: src/config/generate_shap_report.py
       hash: md5
-      md5: 9f412111951fdc6cb27f42b36dd70c03
-      size: 4619
+      md5: 6e78cd61148fb2aca3b26c409ee859ee
+      size: 6023
+    - path: src/config/paths.py
+      hash: md5
+      md5: 6a7faf531db77c12861acf41238d71d8
+      size: 1093
     outs:
     - path: reports/shap_report.pdf
       hash: md5
-      md5: 1dc492b6896c1676ae1fd526ea0ad560
-      size: 2656374
+      md5: 36bcc11b1f27c5da383a3492ee7c3980
+      size: 1921294

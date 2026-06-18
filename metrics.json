@@ -1,1 +1,77 @@
-{"accuracy": 0.9995611109160493, "precision": 0.9620253164556962, "recall": 0.7755102040816326}
+{
+  "dataset": {
+    "processed_data_path": "dados\\credicard_tratado.parquet"
+  },
+  "evaluation": {
+    "cv_folds": 10,
+    "cv_shuffle": true,
+    "cv_random_state": 42,
+    "default_threshold": 0.5,
+    "cross_validation_mean_metrics": {
+      "accuracy": 0.9995751506819646,
+      "precision": 0.9262960762960762,
+      "recall": 0.8200341298203545
+    },
+    "out_of_fold_default_threshold_metrics": {
+      "accuracy": 0.9995751508916565,
+      "precision": 0.9264367816091954,
+      "recall": 0.8191056910569106
+    },
+    "threshold_calibration": {
+      "selection_rule": "minimize_weighted_gap_to_business_targets",
+      "search_space": {
+        "start": 0.5,
+        "end": 0.95,
+        "steps": 91,
+        "precision_weight": 2.0,
+        "recall_weight": 1.0
+      },
+      "selected": {
+        "threshold": 0.5,
+        "metrics": {
+          "accuracy": 0.9995751508916565,
+          "precision": 0.9264367816091954,
+          "recall": 0.8191056910569106
+        },
+        "business_alignment": {
+          "target_precision": 0.9227,
+          "target_recall": 0.8102,
+          "precision_gap": 0.0037367816091954387,
+          "recall_gap": 0.008905691056910525,
+          "weighted_gap": 0.016379254275301403,
+          "alignment_score": 0.9836207457246986
+        }
+      }
+    }
+  },
+  "business_target": {
+    "precision": 0.9227,
+    "recall": 0.8102
+  },
+  "acceptance": {
+    "criteria": {
+      "min_cv_precision": 0.92,
+      "min_cv_recall": 0.81,
+      "min_calibrated_precision": 0.92,
+      "min_calibrated_recall": 0.81,
+      "max_business_weighted_gap": 0.02
+    },
+    "checks": {
+      "min_cv_precision": true,
+      "min_cv_recall": true,
+      "min_calibrated_precision": true,
+      "min_calibrated_recall": true,
+      "max_business_weighted_gap": true
+    },
+    "passed": true
+  },
+  "model": {
+    "artifact_path": "models\\model.pkl",
+    "type": "XGBClassifier",
+    "random_state": 0,
+    "max_depth": 7,
+    "n_estimators": 300,
+    "learning_rate": 0.1,
+    "scale_pos_weight": 577.8760162601626
+  }
+}

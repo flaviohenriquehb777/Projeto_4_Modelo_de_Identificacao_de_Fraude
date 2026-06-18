@@ -2,11 +2,17 @@
 matplotlib
 seaborn
 numpy
+numexpr>=2.10.2
 xgboost
 scipy
 scikit-learn
 imbalanced-learn
 openpyxl
+joblib
+pyarrow
+shap
+fpdf2
+PyYAML
 dvc
 dagshub
 mlflow

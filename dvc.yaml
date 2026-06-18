@@ -3,24 +3,37 @@
     cmd: python src/config/prepare_data.py dados/credicard.csv.gz dados/credicard_tratado.parquet
     deps:
     - dados/credicard.csv.gz
+    - params.yaml
+    - src/config/paths.py
+    - src/config/prepare_data.py
     outs:
     - dados/credicard_tratado.parquet
+    metrics:
+    - reports/data_quality_report.json:
+        cache: false
 
   train_model:
     cmd: python src/config/train_model.py
     deps:
     - dados/credicard_tratado.parquet
+    - params.yaml
+    - src/config/paths.py
     - src/config/train_model.py
     outs:
     - models/model.pkl
+    - models/model_metadata.json
     metrics:
-    - metrics.json
+    - metrics.json:
+        cache: false
 
   generate_shap_insights:
     cmd: python src/config/generate_shap_insights.py
     deps:
+      - params.yaml
+      - src/config/paths.py
       - src/config/generate_shap_insights.py
       - models/model.pkl
+      - models/model_metadata.json
       - dados/credicard_tratado.parquet
     outs:
       - reports/shap_explanations:
@@ -29,6 +42,7 @@
   generate_shap_report:
     cmd: python src/config/generate_shap_report.py
     deps:
+      - src/config/paths.py
       - src/config/generate_shap_report.py
       - reports/shap_explanations/
     outs:

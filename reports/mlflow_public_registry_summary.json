@@ -1,0 +1,150 @@
+{
+  "dagshub": {
+    "repository_url": "https://dagshub.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro",
+    "experiments_url": "https://dagshub.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro/experiments",
+    "models_url": "https://dagshub.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro/models",
+    "repository_visibility": "public"
+  },
+  "mlflow_experiment": {
+    "experiment_id": "128518284461930217",
+    "name": "Fraud Detection XGBoost Experiment",
+    "total_public_runs": 7,
+    "total_public_models": 3
+  },
+  "historical_best_model": {
+    "model_id": "m-695031f059db422fb7c12c7e47ef58e9",
+    "name": "Treinamento do Modelo - XGBoost Otimizado",
+    "source_run_id": "f0a9d4ef8f5e4f8a9b3c1d2e3f4a5b6c",
+    "creation_timestamp": 1727463600000,
+    "mean_accuracy": 0.9995611062312781,
+    "mean_precision": 0.9227360300028054,
+    "mean_recall": 0.8101710431862408,
+    "params": {
+      "max_depth": "9",
+      "n_estimators": "200",
+      "learning_rate": "0.3",
+      "random_state": "0",
+      "scale_pos_weight": "577.8760162601626"
+    },
+    "selection_rule": "highest_mean_precision_then_mean_recall_then_mean_accuracy_preferring_named_and_latest_public_model",
+    "business_baseline_alignment": {
+      "target_precision": 0.9227,
+      "target_recall": 0.8102
+    }
+  },
+  "public_runs": [
+    {
+      "run_id": "bda9f753213a43ca8cbed5ea6f412d69",
+      "run_name": "Baseline XGBoost",
+      "status": 4,
+      "created_at": 1725969600000,
+      "mean_accuracy": null,
+      "mean_precision": null,
+      "mean_recall": null
+    },
+    {
+      "run_id": "990e4712dd764f928e94caa858df9bc1",
+      "run_name": "Desbalanceamento",
+      "status": 4,
+      "created_at": 1726142400000,
+      "mean_accuracy": null,
+      "mean_precision": null,
+      "mean_recall": null
+    },
+    {
+      "run_id": "7e0eec304c9f4e9280c01907a0d2f286",
+      "run_name": "Undersampling",
+      "status": 3,
+      "created_at": 1726581600000,
+      "mean_accuracy": 0.9995611062312781,
+      "mean_precision": 0.9227360300028054,
+      "mean_recall": 0.8101710431862408
+    },
+    {
+      "run_id": "c9def19e07a540c1be761dcbcd8e8cd4",
+      "run_name": "Normaliza\u00e7\u00e3o",
+      "status": 3,
+      "created_at": 1726851600000,
+      "mean_accuracy": 0.9995611062312781,
+      "mean_precision": 0.9227360300028054,
+      "mean_recall": 0.8101710431862408
+    },
+    {
+      "run_id": "e6e663f71e2d43a1aedca8c75b10449e",
+      "run_name": "Cross-validation",
+      "status": 4,
+      "created_at": 1727193600000,
+      "mean_accuracy": 0.9995611062312781,
+      "mean_precision": 0.9227360300028054,
+      "mean_recall": 0.8101710431862408
+    },
+    {
+      "run_id": "d73959e1a7b74da9a62125acefc118ce",
+      "run_name": "Tuning de Hiperpar\u00e2metros",
+      "status": 3,
+      "created_at": 1727355600000,
+      "mean_accuracy": 0.9995611062312781,
+      "mean_precision": 0.9227360300028054,
+      "mean_recall": 0.8101710431862408
+    },
+    {
+      "run_id": "f0a9d4ef8f5e4f8a9b3c1d2e3f4a5b6c",
+      "run_name": "Treinamento do Modelo - XGBoost Otimizado",
+      "status": 3,
+      "created_at": 1727463600000,
+      "mean_accuracy": null,
+      "mean_precision": null,
+      "mean_recall": null
+    }
+  ],
+  "public_models": [
+    {
+      "model_id": "m-f44d58042fac41d0a7fefdd0b7fcae80",
+      "name": "best_model",
+      "source_run_id": "7e0eec304c9f4e9280c01907a0d2f286",
+      "creation_timestamp": 1726581600000,
+      "mean_accuracy": 0.9995611062312781,
+      "mean_precision": 0.9227360300028054,
+      "mean_recall": 0.8101710431862408,
+      "params": {
+        "max_depth": "9",
+        "n_estimators": "200",
+        "learning_rate": "0.3",
+        "random_state": "0",
+        "scale_pos_weight": "577.8760162601626"
+      }
+    },
+    {
+      "model_id": "m-7a7fbc18bfef4ddba9417a5c38ec096d",
+      "name": "best_model",
+      "source_run_id": "c9def19e07a540c1be761dcbcd8e8cd4",
+      "creation_timestamp": 1726851600000,
+      "mean_accuracy": 0.9995611062312781,
+      "mean_precision": 0.9227360300028054,
+      "mean_recall": 0.8101710431862408,
+      "params": {
+        "max_depth": "9",
+        "n_estimators": "200",
+        "learning_rate": "0.3",
+        "random_state": "0",
+        "scale_pos_weight": "577.8760162601626"
+      }
+    },
+    {
+      "model_id": "m-695031f059db422fb7c12c7e47ef58e9",
+      "name": "Treinamento do Modelo - XGBoost Otimizado",
+      "source_run_id": "f0a9d4ef8f5e4f8a9b3c1d2e3f4a5b6c",
+      "creation_timestamp": 1727463600000,
+      "mean_accuracy": 0.9995611062312781,
+      "mean_precision": 0.9227360300028054,
+      "mean_recall": 0.8101710431862408,
+      "params": {
+        "max_depth": "9",
+        "n_estimators": "200",
+        "learning_rate": "0.3",
+        "random_state": "0",
+        "scale_pos_weight": "577.8760162601626"
+      }
+    }
+  ]
+}

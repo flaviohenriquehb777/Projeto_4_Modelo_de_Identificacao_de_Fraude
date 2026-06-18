@@ -24,6 +24,10 @@ jobs:
         pip install -r requirements.txt
         pip install pytest
 
+    - name: Validate dependencies
+      run: |
+        python -m pip check
+
     - name: Install DVC
       run: |
         pip install dvc
@@ -41,21 +45,9 @@ jobs:
       run: |
         dvc pull
 
-    - name: Run basic tests
+    - name: Run test suite
       run: |
-        pytest tests/test_basic.py -v
-
-    - name: Run data quality tests
-      run: |
-        pytest tests/test_data.py -v
-
-    - name: Run model tests
-      run: |
-        pytest tests/test_model.py -v
-
-    - name: Run module tests
-      run: |
-        pytest tests/test_modelos_module.py -v
+        pytest -q
 
     - name: Test DVC reproducibility
       run: |

@@ -1,0 +1,45 @@
+preprocess:
+  time_scaler: minmax
+  amount_transform: yeo-johnson
+
+data_quality:
+  minimum_rows: 1000
+  allow_nulls: false
+  required_columns:
+    - Time
+    - Amount
+    - Class
+  target_column: Class
+  target_allowed_values:
+    - 0
+    - 1
+
+train:
+  evaluation:
+    cv_folds: 10
+    shuffle: true
+    random_state: 42
+    target_precision: 0.9227
+    target_recall: 0.8102
+    threshold_search_start: 0.5
+    threshold_search_end: 0.95
+    threshold_search_steps: 91
+    precision_weight: 2.0
+    recall_weight: 1.0
+  acceptance:
+    min_cv_precision: 0.92
+    min_cv_recall: 0.81
+    min_calibrated_precision: 0.92
+    min_calibrated_recall: 0.81
+    max_business_weighted_gap: 0.02
+  xgboost:
+    max_depth: 7
+    n_estimators: 300
+    learning_rate: 0.1
+    random_state: 0
+    scale_pos_weight: auto
+
+explainability:
+  sample_size: 2000
+  random_state: 42
+  top_features: 6

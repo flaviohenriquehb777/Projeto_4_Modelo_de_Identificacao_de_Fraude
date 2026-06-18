@@ -10,6 +10,9 @@ def test_imports():
         import mlflow
         import dvc
         import joblib
+        import shap
+        import pyarrow
+        from fpdf import FPDF
         print("✅ Todos os imports funcionaram!")
         assert True
     except ImportError as e:

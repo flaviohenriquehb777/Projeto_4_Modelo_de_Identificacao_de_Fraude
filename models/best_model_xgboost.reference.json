@@ -1,0 +1,20 @@
+{
+  "artifact_name": "best_model_xgboost.pkl",
+  "status": "historical_reference_preserved_without_stale_dvc_pointer",
+  "historical_context": "O binario original promovido no projeto legado permanece documentado no historico Git, nos notebooks e nas releases antigas. O branch atual remove o ponteiro DVC quebrado para garantir clone sem friccao para avaliadores.",
+  "business_baseline": {
+    "precision": 0.9227,
+    "recall": 0.8102
+  },
+  "historical_dvc_pointer": {
+    "md5": "94a57ebe5b83b891f098feb8f749c9cb",
+    "size": 430643
+  },
+  "evidence_sources": [
+    "notebooks/09_777_MLFlow_Deployment.ipynb",
+    "README.md",
+    "snapshot",
+    "v1.0.0"
+  ],
+  "operational_artifact": "models/model.pkl"
+}

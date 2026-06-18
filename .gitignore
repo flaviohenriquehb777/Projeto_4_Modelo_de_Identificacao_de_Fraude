@@ -21,4 +21,5 @@ __pycache__/
 .trae/
 .env
 .env.*
+.venv/
 scripts/

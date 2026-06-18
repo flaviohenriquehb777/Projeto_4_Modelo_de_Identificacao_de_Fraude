@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "input_path": "dados/credicard.csv.gz",
+  "output_path": "dados/credicard_tratado.parquet",
+  "preprocess": {
+    "time_scaler": "minmax",
+    "amount_transform": "yeo-johnson"
+  },
+  "raw_dataset": {
+    "row_count": 284807,
+    "column_count": 31,
+    "null_count": 0,
+    "positive_rate": 0.001727485630620034
+  },
+  "prepared_dataset": {
+    "row_count": 284807,
+    "column_count": 31,
+    "null_count": 0,
+    "time_min": 0.0,
+    "time_max": 1.0,
+    "amount_mean": -3.991715011274864e-18,
+    "amount_std": 1.0000017555795626
+  }
+}
