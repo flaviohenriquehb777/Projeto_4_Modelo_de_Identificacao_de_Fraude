@@ -18,11 +18,13 @@ Modelo de Machine Learning para detecção de transações financeiras fraudulen
 - [snapshot — Entrega original (referência)](https://github.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro/releases/tag/snapshot)
 - [v1.0.0 — Entrega original do modelo](https://github.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro/releases/tag/v1.0.0)
 - [v1.1.0 — Rename + DagsHub/DVC/CI](https://github.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro/releases/tag/v1.1.0)
+- [v1.2.0 — Production Hardening Update](https://github.com/flaviohenriquehb777/Modelo_de_Deteccao_de_Fraude-Financeiro/releases/tag/v1.2.0)
 
 ## 🧭 Status Atual
 
 - **Entrega histórica preservada:** o commit original segue explicitamente marcado pelas tags `snapshot` e `v1.0.0`.
 - **Atualização técnica posterior:** a release `v1.1.0` consolida o rename do repositório e o alinhamento entre GitHub, DVC, CI e DagsHub.
+- **Update profissional atual:** a release `v1.2.0` consolida reprodutibilidade, hardening, testes de produção, serving e evidências públicas para avaliação técnica.
 - **Baseline de negócio comprovado:** o melhor experimento histórico registrado no projeto atingiu **Precisão 92,27%** e **Recall 81,02%**.
 - **Evidência pública confirmada:** o DagsHub público expõe **7 experimentos** e **1 modelo registrado** visíveis para avaliadores sem autenticação.
 - **Artefatos organizados por papel:** `models/model.pkl` representa o artefato operacional atual do pipeline DVC, enquanto `models/best_model_xgboost.reference.json` preserva a referência histórica do melhor modelo experimental sem depender de um ponteiro DVC quebrado.

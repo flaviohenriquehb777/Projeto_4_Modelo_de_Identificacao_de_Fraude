@@ -2,7 +2,7 @@
 
 ## Título sugerido
 
-`Production hardening update for fraud detection model`
+`v1.2.0 - Production hardening update for fraud detection model`
 
 ## Resumo executivo
 

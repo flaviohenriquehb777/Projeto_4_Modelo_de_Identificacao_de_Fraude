@@ -1,4 +1,4 @@
-﻿stages:
+stages:
   prepare_data:
     cmd: python src/config/prepare_data.py dados/credicard.csv.gz dados/credicard_tratado.parquet
     deps:
